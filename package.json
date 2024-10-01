@@ -1,0 +1,29 @@
+{
+  "name": "@cloit/monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*",
+    "repo-tools/scripts/workspace-cmd/"
+  ],
+  "packageManager": "yarn@4.5.0",
+  "scripts": {
+    "purge": "./do.sh purge-node-modules",
+    "build": "yarn workspace @cloit/workspace-cmd start -- --cmd=build \"${@}\"",
+    "generate": "yarn workspace @cloit/workspace-cmd start -- --cmd=generate -p=1 \"${@}\"",
+    "dosh": "./do.sh \"${@}\"",
+    "pretty-commit": "pretty-quick --staged",
+    "postinstall": "husky install"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1",
+    "del-cli": "^4.0.1",
+    "husky": "^8.0.3",
+    "prettier": "2.2.1",
+    "prettier-plugin-organize-imports": "^3.1.1",
+    "prettier-plugin-prisma": "^4.10.0",
+    "pretty-quick": "^3.1.0",
+    "typescript": "^5.1.3"
+  }
+}

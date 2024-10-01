@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "MenuItem" ALTER COLUMN "parent_id" SET DATA TYPE TEXT,
+ALTER COLUMN "menu_id" SET DATA TYPE TEXT;
